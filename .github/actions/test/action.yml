@@ -1,5 +1,12 @@
-name: "Run Tests on Dev"
-description: "Runs tests for the python-greetings application in the dev environment"
+name: "Running tests"
+description: "Runs tests for the python-greetings application"
+inputs:
+  environment:
+    description: 'Environment where to execute tests against'
+    required: true
+  test-suite:
+    description: 'Testing suit which needs to be executed'
+    default: 'greetings'
 runs:
   using: "composite"
   steps:
@@ -14,7 +21,7 @@ runs:
       working-directory: course-js-api-framework
       run: npm install
 
-    - name: Run tests on Dev
+    - name: Run tests on ${{ inputs.environment}}
       shell: cmd
       working-directory: course-js-api-framework
-      run: npm run greetings greetings_dev
+      run: npm run ${{ inputs.test-suite }} ${{ inputs.test-suite}}_${{ inputs.environment}}

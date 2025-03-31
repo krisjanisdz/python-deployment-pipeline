@@ -16,5 +16,5 @@ runs:
 
     - name: Start application
       shell: cmd
-      run: start /B pm2 start app.py --name greetings-app-dev -- --port 7001
+      run: RUNNER_TRACKING_ID="" pm2 start app.py --name greetings-app-dev -- --port 7001
       working-directory: python-greetings

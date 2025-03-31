@@ -25,3 +25,9 @@ runs:
       shell: cmd
       working-directory: course-js-api-framework
       run: npm run ${{ inputs.test-suite }} ${{ inputs.test-suite}}_${{ inputs.environment}}
+
+    - name: Stop all running processes
+      shell: bash
+      run: |
+        echo "Stopping all PM2 processes..."
+        pm2 delete all

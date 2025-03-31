@@ -10,11 +10,11 @@ runs:
         path: course-js-api-framework
 
     - name: Install dependencies
-      shell: pwsh
+      shell: cmd
       working-directory: course-js-api-framework
       run: npm install
 
     - name: Run tests on Dev
-      shell: pwsh
+      shell: cmd
       working-directory: course-js-api-framework
       run: npm run greetings greetings_dev

@@ -15,6 +15,7 @@ runs:
       with:
         repository: mtararujs/python-greetings
         path: python-greetings
+        clean: false
 
     - name: Stop existing application
       shell: cmd

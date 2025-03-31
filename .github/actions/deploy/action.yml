@@ -1,0 +1,20 @@
+name: "Deploy to Dev"
+description: "Deploys python-greetings application to the dev environment"
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout python-greetings repository
+      uses: actions/checkout@v4
+      with:
+        repository: mtararujs/python-greetings
+        path: python-greetings
+
+    - name: Stop existing application
+      shell: bash
+      run: pm2 delete greetings-app-dev & EXIT /B 0
+      working-directory: python-greetings
+
+    - name: Start application
+      shell: bash
+      run: pm2 start app.py --name greetings-app-dev --port 7001
+      working-directory: python-greetings

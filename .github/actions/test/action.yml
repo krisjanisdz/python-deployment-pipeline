@@ -1,0 +1,20 @@
+name: "Run Tests on Dev"
+description: "Runs tests for the python-greetings application in the dev environment"
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout course-js-api-framework repository
+      uses: actions/checkout@v4
+      with:
+        repository: mtararujs/course-js-api-framework
+        path: course-js-api-framework
+
+    - name: Install dependencies
+      shell: bash
+      working-directory: course-js-api-framework
+      run: npm install
+
+    - name: Run tests on Dev
+      shell: bash
+      working-directory: course-js-api-framework
+      run: npm run greetings greetings_dev

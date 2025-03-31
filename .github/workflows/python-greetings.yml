@@ -39,7 +39,7 @@ jobs:
         uses: ./.github/actions/test
         with:
           environment: 'dev'
-          test-suit: 'greetings'
+          test-suite: 'greetings'
   
   deploy-to-staging:
     runs-on: [self-hosted]
@@ -62,7 +62,7 @@ jobs:
         uses: ./.github/actions/test
         with:
           environment: 'staging'
-          test-suit: 'greetings'
+          test-suite: 'greetings'
 
   deploy-to-preprod:
     runs-on: [self-hosted]
@@ -85,7 +85,7 @@ jobs:
         uses: ./.github/actions/test
         with:
           environment: 'preprod'
-          test-suit: 'greetings'
+          test-suite: 'greetings'
 
   deploy-to-prod:
     runs-on: [self-hosted]
@@ -108,4 +108,4 @@ jobs:
         uses: ./.github/actions/test
         with:
           environment: 'prod'
-          test-suit: 'greetings'
+          test-suite: 'greetings'

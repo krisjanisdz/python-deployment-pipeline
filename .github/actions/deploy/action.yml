@@ -10,12 +10,14 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Checkout this repository (Pipeline Definition)
+      uses: actions/checkout@v4
+      
     - name: Checkout python-greetings repository
       uses: actions/checkout@v4
       with:
         repository: mtararujs/python-greetings
         path: python-greetings
-        clean: false
 
     - name: Stop existing application
       shell: cmd

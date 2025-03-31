@@ -51,7 +51,7 @@ jobs:
       - name: Deploy to Dev
         uses: ./.github/actions/deploy
         with:
-          environment: 'staging'
+          environment: 'stg'
           port: '7002'
           
   tests-on-staging:
@@ -61,7 +61,7 @@ jobs:
       - name: Run Tests on staging
         uses: ./.github/actions/test
         with:
-          environment: 'staging'
+          environment: 'stg'
           test-suite: 'greetings'
 
   deploy-to-preprod:

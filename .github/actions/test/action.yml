@@ -28,4 +28,5 @@ runs:
 
     - name: Stop all running processes
       shell: cmd
+      working-directory: python-greetings
       run: pm2 delete all
